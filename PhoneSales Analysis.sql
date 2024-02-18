@@ -121,5 +121,14 @@ Order by
 	TotalSales 
 Select * From PhoneSales
 
+--Sales by Year ---
+Select 
+	Datepart(Year,[Date]) AS [Year],
+	Sum(Sales) AS TotalSales
+From 
+	PhoneSales
+Group by Datepart(Year,[Date])
+Order by [Year] DESC
+
 
 
